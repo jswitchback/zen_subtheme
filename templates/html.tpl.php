@@ -87,10 +87,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
   <?php endif; ?>
   <meta name="application-name" content="<?php print $head_title_array['name']; ?>">
-  <meta name="msapplication-TileColor" content="#<?php print $add_ms_tile_color; ?>">
-  <meta name="msapplication-TileImage" content="<?php print $GLOBALS['base_url'] . '/' . $path_to_subtheme; ?>/images/app-icons/ms-application-icon-144x144.png">
-  <link rel="icon" sizes="196x196" href="<?php print $GLOBALS['base_url'] . '/' . $path_to_subtheme; ?>/images/app-icons/android-196x196.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="<?php print $GLOBALS['base_url'] . '/' . $path_to_subtheme; ?>/images/app-icons/apple-touch-icon-152x152.png">
+  <meta name="msapplication-TileColor" content="#<?php print $ms_tile_color; ?>">
+  <meta name="msapplication-TileImage" content="<?php print $GLOBALS['base_url'] . '/' . $path_to_zen_subtheme; ?>/images/app-icons/ms-application-icon-144x144.png">
+  <link rel="icon" sizes="196x196" href="<?php print $GLOBALS['base_url'] . '/' . $path_to_zen_subtheme; ?>/images/app-icons/android-196x196.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="<?php print $GLOBALS['base_url'] . '/' . $path_to_zen_subtheme; ?>/images/app-icons/apple-touch-icon-152x152.png">
 
   <meta http-equiv="cleartype" content="on">
 
