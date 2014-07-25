@@ -210,8 +210,8 @@ function zen_subtheme_preprocess_html(&$variables, $hook) {
   $variables['zen_subtheme_accordion_menu'] = theme_get_setting('zen_subtheme_accordion_menu');
   $add_accordion_menu = $variables['zen_subtheme_accordion_menu'];
 
-  $variables['enable_singularity_grid'] = theme_get_setting('enable_singularity_grid');
-  $enable_singularity_grid = $variables['enable_singularity_grid'];
+  $variables['enable_compass_grid'] = theme_get_setting('enable_compass_grid');
+  $enable_compass_grid = $variables['enable_compass_grid'];
 
   $variables['add_ms_tile_color'] = theme_get_setting('zen_subtheme_ms_tile_color');
   $add_ms_tile_color = $variables['add_ms_tile_color'];
@@ -220,10 +220,10 @@ function zen_subtheme_preprocess_html(&$variables, $hook) {
     drupal_add_library('zen_subtheme', 'to_top');
   }
 
-  if ($enable_singularity_grid && $variables['is_admin'] ) {
+  if ($enable_compass_grid && $variables['is_admin'] ) {
       $variables['attributes_array']['data-development-grid'][] = 'hide';
-      drupal_add_js(drupal_get_path('theme', 'zen_subtheme') . '/js/lib-vendor/grid.js', array('group' => JS_THEME, 'weight' => -10, 'every_page' => TRUE));
-      drupal_add_css(drupal_get_path('theme', 'zen_subtheme') . '/css/lib-vendor/grid.css', array('group' => CSS_THEME, 'weight' => -10, 'every_page' => TRUE));
+      drupal_add_js(drupal_get_path('theme', 'zen_subtheme') . '/js/lib-conditional/grid.js', array('group' => JS_THEME, 'weight' => -10, 'every_page' => TRUE));
+      drupal_add_css(drupal_get_path('theme', 'zen_subtheme') . '/css/lib-conditional/grid.css', array('group' => CSS_THEME, 'weight' => -10, 'every_page' => TRUE));
   }
 
   if ($add_viewport_indicator) {
