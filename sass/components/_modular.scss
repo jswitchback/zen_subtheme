@@ -1,0 +1,21 @@
+/* @partial modular */
+// Import Sass mixins, variables, Compass modules, etc.
+@import "../_base.scss";
+@import "../_layout.scss";
+@import "../_theme.scss";   
+@import "../_mixins.scss";
+
+
+///////////////////////////////////////////////////////////////
+// This file intended for object oriented css. 
+// Like a block style that is reused across all pages or 
+// A teaser listing that's the same across different content 
+// listing (news, events, etc.).
+///////////////////////////////////////////////////////////////
+
+
+
+.block {
+  margin-bottom: $vert-gutter;
+  margin-top: 0;
+}

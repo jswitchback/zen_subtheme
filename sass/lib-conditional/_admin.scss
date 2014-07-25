@@ -1,0 +1,356 @@
+/* @partial admin */
+// Import Sass mixins, variables, Compass modules, etc.
+@import "../_base.scss";
+@import "../_layout.scss";
+@import "../_theme.scss";   
+@import "../_mixins.scss";
+
+
+////////////////////////////////////////////////////////////////////////////
+// Styles in case this theme is used for the admin theme or node edit form.
+// Add '@import "lib-conditional/_admin.scss";' to include this partial.
+///////////////////////////////////////////////////////////////////////////
+
+
+/* Definition Lists & Drupal Content add list
+   ========================================================================== */
+
+
+.node-type-list {
+  dd {
+    margin: 0 0 1em 0;
+    font-size: 14px; 
+    font-size: .875rem;
+  }
+}
+
+
+/* Forms
+   ========================================================================== */
+
+
+.form-type-managed-file input.form-submit {
+  margin-left: .5em;
+}
+
+.text-format-wrapper {
+  position: relative;
+ .form-item {
+   margin-bottom: 0;
+  }
+}
+
+/* Set the disable rich text bottom to right bottom corner */
+.field-widget-text-textarea-with-summary, .field-widget-text-textarea { 
+ .wysiwyg-toggle-wrapper {
+   position: absolute;
+   bottom: 10px;
+   right: 26px;
+ }
+}
+
+// Remove styling from Drupal vertical tabs
+.vertical-tabs fieldset.vertical-tabs-pane {
+    background: none repeat scroll 0 0 transparent;
+}
+
+
+/* Horizontal Tabs
+   ========================================================================== */
+
+
+ 
+div.horizontal-tabs {
+  margin: 0 0 1em 0; /* LTR */
+  padding: 0;
+  position: relative; /* IE6/7 */
+}
+
+.horizontal-tabs-panes {
+  border: 1px solid $tabs-display-border-color;
+  margin-top: -9px;
+  @include border-bottom-radius($tabs-display-border-radius); 
+}
+
+.horizontal-tabs ul.horizontal-tabs-list {
+  display: inline-block;
+  margin: 0;
+  border: 0;
+  padding: 0px;
+  position: relative; /* IE6 */
+  list-style: none;
+  list-style-image: none; /* IE6 */
+  background-color: none;
+  width: 100%;
+  height: auto;
+  clear: both;
+}
+
+fieldset.field-group-htab {
+  margin: 0;
+  @include border-top-left-radius(0);
+}
+ 
+.horizontal-tabs fieldset.horizontal-tabs-pane {
+  padding: 1em;
+  border: 0;
+  background: #fff;
+}
+
+.horizontal-tabs-pane>legend {
+  display: none;
+}
+
+/* Layout of each tab */
+.horizontal-tabs ul.horizontal-tabs-list li {
+  background: $tabs-display-background-color;
+  border-right: 1px solid $tabs-display-border-color;
+  border-top: 1px solid $tabs-display-border-color;
+  border-bottom: 1px solid $tabs-display-border-color;
+  padding: 1px;
+  padding-top: 0; 
+  margin: 0;
+  min-width: 5em; /* IE7 */
+  float: left;
+  &.first {
+    border-left: 1px solid $tabs-display-border-color;
+  }
+  &.selected {
+    border-bottom: 1px solid #fff;
+    background-color: #fff;
+    padding: 0 0 1px 0;  
+    a {
+      border-top: .25em solid $tabs-display-active-border-color;
+      color: #000;
+      display: block;
+      text-decoration: none;
+      padding: 0.5em 0.6em 0.3em 0.6em;
+      position: relative;
+      top: 0px;
+      &:hover, &:focus {
+        outline: none;
+        background: #fff;
+        color: #000;
+      }
+    }
+  }
+  a {
+    font-size: .875em;
+    display: block;
+    text-decoration: none;
+    padding: 0.5em 0.6em;
+    position: relative;
+    top: 0px;
+    &:hover {
+      outline: none;
+      color: $body-font-color;
+      background-color: #f1f1f1;
+      strong {
+        text-decoration: none;
+        outline: none;
+      }
+    }
+    &:focus,
+    &:active {
+      strong {
+        text-decoration: none;
+        outline: none;
+      }
+    }
+  }
+  &:hover, 
+  &:focus {
+    outline: none;
+  }
+}
+
+.horizontal-tabs ul.horizontal-tabs-list .selected strong {
+}
+.horizontal-tabs ul.horizontal-tabs-list .summary {
+  display: block;
+}
+.horizontal-tabs ul.horizontal-tabs ul.horizontal-tabs-list .summary {
+  line-height: normal;
+  margin-bottom: 0;
+}
+
+/**
+ * tab content 
+ */
+div.field-group-htabs-wrapper .field-group-format-wrapper { 
+  clear: both;
+  padding: 0 0 0.6em;
+}
+/*hide*/
+.horizontal-tabs .horizontal-tab-hidden {
+  display: block;
+  position: absolute;
+  top: -100000px;
+}
+
+/* ADDED */
+
+.horizontal-tabs-pane fieldset {
+  background: none;
+  border: none;
+}
+
+
+/* Vertical Tabs
+   ========================================================================== */
+
+
+div.vertical-tabs {
+  margin: 2em 0 1em 15em; /* LTR */
+  border: 1px solid $tabs-display-border-color;
+  background-color: $tabs-display-active-content-color;
+  position: relative; /* IE6/7 */ 
+}
+.vertical-tabs ul.vertical-tabs-list {
+  width: 15em;
+  list-style: none;
+  list-style-image: none; /* IE6 */
+  border-top: 1px solid $tabs-display-border-color;
+  padding: 0;
+  position: relative; /* IE6 */
+  margin: -1px 0 -1px -15em; /* LTR */
+  float: left; /* LTR */
+}
+.vertical-tabs fieldset.vertical-tabs-pane {
+  margin: 0 !important;
+  padding: 1em;
+  border: 0;
+}
+fieldset.vertical-tabs-pane legend {
+  display: none;
+}
+fieldset.vertical-tabs-pane fieldset legend {
+  display: block;
+}
+
+/* Layout of each tab */
+.vertical-tabs ul.vertical-tabs-list li {
+  background: $tabs-display-background-color;
+  border: 1px solid $tabs-display-border-color;
+  border-top: 0;
+  padding: 0;
+  margin: 0;
+  min-width: 0; /* IE7 */
+  &:focus, &:active {
+    outline: none;
+  }
+  &:hover, &:focus {
+    background: #f1f1f1;
+  }
+}
+.vertical-tabs ul.vertical-tabs-list li a {
+  display: block;
+  text-decoration: none;
+  padding: 0.5em 0.6em;
+  font-size: .875em;
+}
+.vertical-tabs ul.vertical-tabs-list li a:focus strong,
+.vertical-tabs ul.vertical-tabs-list li a:active strong,
+.vertical-tabs ul.vertical-tabs-list li a:hover strong {
+  text-decoration: none;
+}
+.vertical-tabs ul.vertical-tabs-list li a:hover {
+  outline: none;
+  color: $body-font-color;
+}
+.vertical-tabs ul.vertical-tabs-list li.selected {
+  background-color: $tabs-display-active-content-color;
+  border-right-width: 0; /* LTR */
+  a {
+    border-left: .25em solid $tabs-display-active-border-color;
+  }
+}
+.vertical-tabs ul.vertical-tabs-list .selected strong {
+  color: #000;
+}
+.vertical-tabs ul.vertical-tabs-list .summary {
+  display: block;
+}
+.vertical-tabs ul.vertical-tabs ul.vertical-tabs-list .summary {
+  line-height: normal;
+  margin-bottom: 0;
+}
+
+/**
+ * Prevent text inputs from overflowing when container is too narrow. "width" is
+ * applied to override hardcoded cols or size attributes and used in conjunction
+ * with "box-sizing" to prevent box model issues from occurring in most browsers.
+*/
+.vertical-tabs .form-type-textfield input {
+  width: 100%;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+* html .vertical-tabs .form-type-textfield,
+* html .vertical-tabs .form-textarea-wrapper {
+  width: 95%; /* IE6 */
+}
+
+/* ADDED */
+
+.vertical-tab-button.first {
+  @include border-top-left-radius($tabs-display-border-radius);
+}
+
+.vertical-tab-button.last {
+  @include border-bottom-left-radius($tabs-display-border-radius);
+}
+
+.vertical-tabs-pane {
+  @include border-top-right-radius($tabs-display-border-radius);
+  @include border-bottom-right-radius($tabs-display-border-radius);
+  @include border-bottom-left-radius($tabs-display-border-radius);
+}
+
+.vertical-tabs-pane fieldset {
+  background: none;
+  border: none;
+}
+
+
+/* Views' admin tabs
+   ========================================================================== */
+/*
+ * The views admin tabs use the same classes as the secondary tabs. We prevent
+ * some of our tab styling from bleeding into (and breaking) the Views admin
+ * pages.
+ */
+
+.views-displays .secondary {
+  li {
+    float: none;
+    margin: 0 6px 0;
+  } 
+
+  a:link,
+  a:visited {
+    @include single-text-shadow(none);
+    padding: 2px 7px 3px;
+  }
+
+  .open > a {
+    @include border-radius(7px 7px 0 0);
+    &:hover {
+      color: #333;
+    }
+  } 
+
+  .action-list li {
+    margin: 0;
+    &:first-child {
+      @include border-radius(0 7px 0 0);
+    }
+    &:last-child {
+      @include border-radius(0 0 7px 7px);
+    }
+  }
+}
+
+
+

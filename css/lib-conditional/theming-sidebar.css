@@ -1,0 +1,93 @@
+#theming-sidebar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 200;
+  height: 100%;
+  -moz-transform: translateX(-275px);
+  -ms-transform: translateX(-275px);
+  -webkit-transform: translateX(-275px);
+  transform: translateX(-275px);
+  -moz-transition-property: all;
+  -webkit-transition-property: all;
+  transition-property: all;
+  -moz-transition-duration: 0.15s;
+  -webkit-transition-duration: 0.15s;
+  transition-duration: 0.15s;
+  -moz-transition-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  -webkit-transition-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  transition-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  width: 280px;
+  background: #fff;
+  background: rgba(255, 255, 255, 0.95);
+  border-right: 5px solid #b73b3b;
+  border-right-radius: 6px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 46px 20px 20px 20px;
+}
+#theming-sidebar.active {
+  -moz-transform: translateX(0px);
+  -ms-transform: translateX(0px);
+  -webkit-transform: translateX(0px);
+  transform: translateX(0px);
+}
+#theming-sidebar.active #links-toggle {
+  border-top: 1px solid #b73b3b;
+  border-right: 1px solid #b73b3b;
+  border-bottom: 1px solid #b73b3b;
+}
+
+.no-csstransforms.no-csstransitions #theming-sidebar {
+  left: -270px;
+}
+.no-csstransforms.no-csstransitions #theming-sidebar.active {
+  left: 0;
+}
+
+.no-js #theming-tab {
+  display: none;
+}
+.no-js #theming-sidebar {
+  position: static;
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  width: auto;
+}
+
+#theming-tab {
+  display: block;
+  -moz-transition-property: all;
+  -webkit-transition-property: all;
+  transition-property: all;
+  -moz-transition-duration: 0.15s;
+  -webkit-transition-duration: 0.15s;
+  transition-duration: 0.15s;
+  -moz-transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  cursor: pointer;
+  vertical-align: middle;
+  position: absolute;
+  right: -24px;
+  color: #fff;
+  top: 140px;
+  display: block;
+  -moz-border-radius-topright: 30px;
+  -webkit-border-top-right-radius: 30px;
+  border-top-right-radius: 30px;
+  -moz-border-radius-bottomright: 30px;
+  -webkit-border-bottom-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  background: #b73b3b;
+  height: 32px;
+  line-height: 28px;
+  width: 22px;
+  text-align: center;
+}
+#theming-tab:hover {
+  background: #ca5b5b;
+}

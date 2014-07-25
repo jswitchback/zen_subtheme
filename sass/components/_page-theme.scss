@@ -1,0 +1,192 @@
+/* @partial page-theme */
+// Import Sass mixins, variables, Compass modules, etc.
+@import "../_base.scss";
+@import "../_layout.scss";
+@import "../_theme.scss";   
+@import "../_mixins.scss";
+
+
+/**
+ * General page elements layout and theming that do not chnage across pages. Background images, logos, etc.
+ *
+ */
+
+
+/* Body
+   ========================================================================== */
+
+ 
+body {
+  margin: 0;
+  padding: 0;
+  background-color: $body-bgrd-color;
+} 
+
+
+/* Header
+   ========================================================================== */
+
+
+/* Wrapping link for logo. */
+.header__logo {
+  float: left; /* LTR */
+  margin: 0;
+  padding: 0;
+}
+
+/* Logo image. */
+.header__logo-image {
+  vertical-align: bottom;
+}
+
+
+.header__name-and-slogan {
+  float: left;
+  height: 200px;
+}
+
+/* The name of the website. */
+.header__site-name {
+  margin: 0;
+  @include adjust-font-size-to( $h1-font-size );
+}
+
+/* The link around the name of the website. */
+.header__site-link {
+  &:link,
+  &:visited {
+    color: #000;
+    text-decoration: none;
+  }
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+}
+
+/* The slogan (or tagline) of a website. */
+.header__site-slogan {
+  margin: 0;
+}
+
+/* The secondary menu (login, etc.) */
+.header__secondary-menu {
+  float: right; /* LTR */
+}
+
+/* Wrapper for any blocks placed in the header region. */
+.header__region {
+  /* Clear the logo. */
+  clear: both;
+}
+
+
+/* Main / Content
+   ========================================================================== */
+
+
+#main {
+}
+
+#content {
+}
+
+.region-help { /* Help text on a page */
+}
+
+.more-help-link { /* Link to more help */
+}
+
+span.field-label { /* The inline field label used by the Fences module */
+  padding: 0 1em 0 0; /* LTR */
+}
+
+.feed-icon { /* The link to the RSS or Atom feed for the current list of content */
+}
+
+.more-link { /* Aggregator, blog, and forum more link */
+}
+
+
+/* Messages
+   ========================================================================== */
+
+
+.messages {
+  margin: $vert-gutter 0;
+  padding: 10px 10px 10px 50px; /* LTR */
+  background-image: inline-image("message-24-ok.png");
+  background-position: 8px 8px; /* LTR */
+  background-repeat: no-repeat;
+  border: 1px solid #be7;
+}
+.messages--status {
+  @extend .messages;
+  @extend %ok;
+}
+.messages--warning {
+  @extend .messages;
+  @extend %warning;
+  background-image: inline-image("message-24-warning.png");
+  border-color: #ed5;
+}
+.messages--error {
+  @extend .messages;
+  @extend %error;
+  background-image: inline-image("message-24-error.png");
+  border-color: #ed541d;
+
+}
+.messages__list {
+  margin: 0;
+}
+.messages__item {
+  list-style-image: none;
+}
+
+/* Core/module installation error messages. */
+.messages--error  p.error {
+  color: #333;
+}
+
+/* System status report. */
+.ok,
+%ok {
+  background-color: #f8fff0;
+  color: #234600;
+}
+.warning,
+%warning {
+  background-color: #fffce5;
+  color: #840;
+}
+.error,
+%error {
+  background-color: #fef5f1;
+  color: #8c2e0b;
+}
+
+
+/* First Sidebar
+   ========================================================================== */
+
+
+.region-sidebar-first {
+}
+
+
+
+/* Second Sidebar
+   ========================================================================== */
+   
+
+.region-sidebar-second {
+}
+
+
+/* Footer
+   ========================================================================== */
+
+#footer {
+}

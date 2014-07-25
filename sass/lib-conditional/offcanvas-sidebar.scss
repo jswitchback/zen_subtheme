@@ -1,0 +1,93 @@
+// Import Sass mixins, variables, Compass modules, etc.
+@import "../_base.scss";
+@import "../_layout.scss";
+@import "../_theme.scss";   
+@import "../_mixins.scss";
+
+
+//////////////////////////////////////////////////////
+// Off-Canvas Sidebar (body.has-offcanvas-sidebar)
+//////////////////////////////////////////////////////
+
+
+/* Behavior
+   ========================================================================== */
+
+#page {
+   width: 100%;
+}
+
+#page:before {
+   content: " ";
+   height: 100%;
+   left: -100%;
+   position: absolute;
+   top: 0;
+   width: 100%;
+   z-index: -1;
+}
+
+#offcanvas-sidebar, #page {
+   display: block;
+   position: relative;
+   @include transition(all 0.25s ease-in-out);
+   width: 100%;
+
+}
+
+#offcanvas-sidebar {
+   @include micro-clearfix;
+   @include transparent;
+   @include transition(all 0.5s ease-in-out);
+   position: absolute;
+   right: 0;
+   top: 0;
+   width: 280px;
+   float: none;
+   z-index: 0;
+   -webkit-backface-visibility: hidden;
+   .region {
+      padding: 20px;
+   }
+}
+
+// Push sidebar below admin navigation
+.admin-menu #offcanvas-sidebar {
+   top: 20px;
+}
+
+#page {
+   position: relative;
+   z-index: 1;
+   overflow: hidden;
+}
+
+.show-canvas #offcanvas-sidebar {
+   @include opaque;
+}
+
+.show-canvas #page {
+   @include transform(translateX(-280px));
+}
+
+/* Legacy browser fallback */
+.no-csstransforms .show-canvas #page {
+   left: -280px;
+}
+
+
+/* Theme
+   ========================================================================== */
+
+body {
+   background-color: black;
+   background-size:8px 8px;
+}
+
+#page {
+   @include box-shadow(black 0 0 12px);
+   background-color: white;
+}
+
+
+

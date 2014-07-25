@@ -1,0 +1,114 @@
+
+
+
+// =============================================================================
+// MEDIA QUERY VARIABLES
+// =============================================================================
+
+
+
+// Converts breakpoints to ems for better font scaling & accessibility.
+// Variable source: breakpoint 
+$breakpoint-to-ems: true; 
+
+// Set min and max width of layout
+$min-layout: 320px;
+$max-layout: 980px;
+
+// Standard dpi breakpoints
+$phone-max: max-width 479px;
+$phone-min: 480px;
+
+$tablet-small-max: max-width 599px;
+$tablet-small-min: 600px;
+
+$tablet-portrait-max: max-width 759px;
+$tablet-portrait-min: 760px;
+
+$desktop-max: max-width 979px;
+$desktop-min: 980px;
+
+// Miscellanous breakpoints
+$tablet-landscape-min: 1024px;
+$tablet-landscape-max: max-width 1023px;
+$desktop-medium-min: 1280px;
+$desktop-medium-max: 1279px;
+$widescreen-max: max-width 1439px;
+$widescreen-min: 1440px;
+$orientation-landscape: "only screen and (orientation: landscape)";
+$orientation-portrait: "only screen and (orientation: portrait)";
+
+
+
+// =============================================================================
+// VERTICAL RHTHYM & GRID VARIABLES
+// =============================================================================
+
+
+
+// Universal vertical rhthym gutter. Determines baseline gutters 
+// as well as block and form element margins,
+// p + p tags, hr tags, blockquote and pre tag padding
+$vert-gutter: $base-line-height * 1.5;
+$horiz-gutter: 24px;
+
+
+// Variable source: Singularity 
+// 1.0 syntax
+// $grids: 24;
+// $gutters: $horiz-gutter;
+// $gutter-styles: 'split';
+
+// 1.2 syntax
+// How to use grid-span: https://github.com/Team-Sass/Singularity/wiki/Spanning-The-Grid
+@include add-grid(24);
+@include add-gutter($horiz-gutter);
+// For fixed gutters: @include sgs-change('gutter styles', 'fixed');
+@include add-gutter-style('split');
+@include sgs-change('output', 'isolation');
+
+
+
+// =============================================================================
+// COMPASS GRID OVERLAY HELPER VARIABLES ... See http://compass-style.org/reference/compass/layout/grid_background/
+// =============================================================================
+
+
+
+$grid-background-column-color: rgba(100, 100, 225, 0.25);
+
+// Set the color of your columns
+$grid-background-gutter-color: rgba(0, 0, 0, 0);
+
+// Set the color of your gutters
+$grid-background-total-columns: 24;
+
+// Set the total number of columns in your grid
+$grid-background-column-width: 30px;
+
+// Set the width of your columns
+$grid-background-gutter-width: 10px;
+
+// Set the width of your gutters
+$grid-background-offset: 0px;
+
+// Set the offset, if your columns are padded in from the container edge
+$grid-background-baseline-color: rgba(0, 0, 0, 0.5);
+
+// Set the color of your baseline
+$grid-background-baseline-height: 1.5em;
+
+// Set the height of your baseline grid
+$show-column-grid-backgrounds: true;
+
+// toggle your columns grids on and off
+$show-baseline-grid-backgrounds: true;
+
+// toggle your vertical grids on and off
+$show-grid-backgrounds: true;
+
+// toggle all your grids on and off
+$grid-background-force-fluid: true;
+
+
+

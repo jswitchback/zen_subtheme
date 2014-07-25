@@ -1,0 +1,90 @@
+/* Behavior
+   ========================================================================== */
+#page {
+  width: 100%;
+}
+
+#page:before {
+  content: " ";
+  height: 100%;
+  left: -100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+#offcanvas-sidebar, #page {
+  display: block;
+  position: relative;
+  -moz-transition: all 0.25s ease-in-out;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+  width: 100%;
+}
+
+#offcanvas-sidebar {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  -moz-transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 280px;
+  float: none;
+  z-index: 0;
+  -webkit-backface-visibility: hidden;
+}
+#offcanvas-sidebar:before, #offcanvas-sidebar:after {
+  content: "";
+  display: table;
+}
+#offcanvas-sidebar:after {
+  clear: both;
+}
+#offcanvas-sidebar .region {
+  padding: 20px;
+}
+
+.admin-menu #offcanvas-sidebar {
+  top: 20px;
+}
+
+#page {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.show-canvas #offcanvas-sidebar {
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+  opacity: 1;
+}
+
+.show-canvas #page {
+  -moz-transform: translateX(-280px);
+  -ms-transform: translateX(-280px);
+  -webkit-transform: translateX(-280px);
+  transform: translateX(-280px);
+}
+
+/* Legacy browser fallback */
+.no-csstransforms .show-canvas #page {
+  left: -280px;
+}
+
+/* Theme
+   ========================================================================== */
+body {
+  background-color: black;
+  background-size: 8px 8px;
+}
+
+#page {
+  -moz-box-shadow: black 0 0 12px;
+  -webkit-box-shadow: black 0 0 12px;
+  box-shadow: black 0 0 12px;
+  background-color: white;
+}

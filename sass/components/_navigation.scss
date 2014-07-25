@@ -1,0 +1,290 @@
+/* @partial navigation */
+// Import Sass mixins, variables, Compass modules, etc.
+@import "../_base.scss";
+@import "../_layout.scss";
+@import "../_theme.scss";   
+@import "../_mixins.scss";
+
+
+/* Main Navigation
+   ========================================================================== */
+
+
+#navigation {
+  // Sometimes you want to prevent overlapping with main div.
+  // overflow: hidden;
+ 
+  .block {
+    margin-bottom: 0;
+  }
+
+  .block-menu .block__title,
+  .block-menu-block .block__title {
+    @extend %element-invisible;
+  }
+
+  /* Main menu and secondary menu links and menu block links. */
+  .links,
+  .menu {
+    margin: 0;
+    padding: 0;
+    text-align: left; /* LTR */
+
+    li {
+      /* A simple method to get navigation links to appear in one line. */
+      float: left; /* LTR */
+      padding: 0 10px 0 0; /* LTR */
+      margin: 0 0 $vert-gutter/4 0; /* LTR */
+      list-style-type: none;
+      list-style-image: none;
+      &.last {
+        margin-bottom: 0;
+      }
+    }
+
+  }
+}
+
+ul.menu {
+  li {
+  list-style-image: none;
+  list-style-type: none;
+  }
+}
+
+
+/* Breadcrumb
+   ========================================================================== */
+
+
+.breadcrumb {
+  @include rem('font-size', 14px);
+  font-size: .875em;
+  ol {
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    display: inline;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+
+/* General Drupal Menus
+   ========================================================================== */
+
+
+.menu__item.is-leaf {
+  list-style-image: inline-image("menu-leaf.png");
+  list-style-type: square;
+}
+.menu__item.is-expanded {
+  list-style-image: inline-image("menu-expanded.png");
+  list-style-type: circle;
+}
+.menu__item.is-collapsed {
+  list-style-image: inline-image("menu-collapsed.png"); /* LTR */
+  list-style-type: disc;
+}
+
+/* The active item in a Drupal menu. */
+.menu a.active {
+  color: $link-color-visited;
+}
+
+
+/* Pagination
+   ========================================================================== */
+
+
+/* A list of page numbers when more than 1 page of content is available. */
+.pager {
+  clear: both;
+  padding: 0;
+  text-align: center;
+}
+%pager__item {
+  display: inline;
+  padding: 0 0.5em;
+  list-style-type: none;
+  background-color: $pager-color;
+  @include background-image(linear-gradient(center top, $pager-color, darken($pager-color, 10%)));
+  background-repeat: repeat-x;
+  border: 1px solid darken($pager-color, 10%);
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  @include border-radius($ui-border-radius);
+  @include box-shadow(rgba(255, 255, 255, 0.2) 0 1px 0 inset, rgba(0, 0, 0, 0.05) 0 1px 2px);
+  color: lighten($pager-color, 100%);
+  text-shadow: 0 1px 1px #000;
+  text-transform: uppercase;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  height: 24px;
+  width: 24px;
+  padding: 3px 8px;
+  @include transition(padding .15s ease-in);
+  a:hover, a:active {
+    background-color: darken($pager-color, 10%);
+    @include background-image(linear-gradient(center top, darken($pager-color, 2%), $pager-color));
+    background-repeat: repeat-x;
+    border: 1px solid lighten($pager-color, 20%);
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    @include border-radius($ui-border-radius);
+    @include box-shadow(rgba(255, 255, 255, 0.2) 0 0 8px inset, rgba(0, 0, 0, 0.05) 0 1px 2px);
+    text-shadow: 0 1px 1px darken($pager-color, 10%);
+    text-transform: uppercase;
+    color: lighten($pager-color, 100%);
+    text-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+    text-align: center;
+    text-decoration: none;
+    padding: 5px 10px;
+  }
+}
+
+.pager-item,      /* A list item containing a page number in the list of pages. */
+.pager-first,     /* The first page's list item. */
+.pager-previous,  /* The previous page's list item. */
+.pager-next,      /* The next page's list item. */
+.pager-last,      /* The last page's list item. */
+.pager-ellipsis { /* A concatenation of several list items using an ellipsis. */
+  @extend %pager__item;
+}
+
+/* The current page's list item. */
+.pager-current {
+  @extend %pager__item;
+  font-weight: bold;
+  margin: 0 0.25em;
+}
+
+.item-list .pager { /* A list of page numbers when more than 1 page of content is available */
+  padding: 0;
+  font-size: .75em;
+  li { /* Each page number in the pager list */
+    padding: 0 0.15em;
+  }
+}
+
+.item-list {
+    overflow: hidden;
+}
+
+
+/* Node edit tabs
+   ========================================================================== */
+
+
+$tab-radius: 4px;
+$tab-color: $link-color;
+$tab-font-size: .75 * $base-font-size;
+
+ul.tabs-primary,
+ul.tabs-secondary {
+ @include clearfix;
+ list-style: none;
+ margin: 1em 0 2.5em;
+ padding: 0 2px;
+ white-space: nowrap;
+ li {
+   float: left; /* LTR */
+   margin: 0.5em 3px 0;
+ }
+ a, a:link {
+   display: block;
+   text-decoration: none;
+ }
+}
+
+ul.tabs-primary {
+      border-bottom: 1px solid darken($tab-color, 10%);
+      li {
+        border: 1px solid darken($tab-color, 10%);
+        margin: 0.5em 0 0 3px; /* LTR */
+        @include border-top-radius($tab-radius);
+        @include single-text-shadow(#fff, 1px, 1px, 0);
+          &.is-active {
+            border: 1px solid #d1d1d1;
+            a {
+              background-color: $tab-color;
+              @include background-image(linear-gradient(center top, $tab-color, darken($tab-color, 10%)));
+              color: lighten($tab-color, 50%);
+              font-weight: normal;
+              background-repeat: repeat-x;
+              border: 1px solid darken($tab-color, 10%);
+              border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+              @include box-shadow(rgba(255, 255, 255, 0.2) 0 0 8px inset, rgba(0, 0, 0, 0.05) 0 1px 2px);
+            }
+          }
+          a {
+            border-bottom: 1px solid #ffffff;
+            margin-bottom: -1px; /* Overlap the uls border. */
+            font-weight: bold;
+            font-size: $tab-font-size;
+            text-transform: uppercase;
+            background: none repeat scroll 0 0 $tab-color;
+            border: 1px solid $tab-color;
+            @include border-top-radius($tab-radius);
+            @include box-shadow(lighten($tab-color, 10%) 0 0 2px inset); 
+            color: #ffffff;
+            text-shadow: 0 1px 1px darken($tab-color, 10%);
+            line-height: 26px;
+            padding: 0 20px;
+              &:hover {
+                text-decoration: none;
+                @include background-image(linear-gradient(center top, $tab-color, darken($tab-color, 10%)));
+                @include box-shadow(lighten($tab-color, 10%) 0 0 4px inset);
+                border: 1px solid lighten($tab-color, 10%);
+              }
+              &.active {
+                background: none repeat scroll 0 0 #ffffff;
+                @include background(linear-gradient(top center, #F1F1F1, #ffffff));
+                @include box-shadow(none);
+                color: #494949;
+                text-shadow: none;
+                border: 1px solid #FFFFFF;
+                border-bottom: 1px solid #fff;
+                text-shadow: none;
+                &:hover {
+                  @include background(linear-gradient(top center, #F1F1F1, #ffffff));
+                  @include box-shadow(none); 
+                }
+              }
+            }  
+      }
+}
+
+// /*
+//  * Secondary tabs STOCK 
+//  */
+
+// ul.secondary {
+//   font-size: .9em;
+//   margin-top: -1.5em; /* Collapse bottom margin of ul.primary. */
+//   padding-bottom: .5em;
+
+//   a:link,
+//   a:visited {
+//     @include border-radius(.75em);
+//     @include transition(background-color 0.3s);
+//     @include single-text-shadow(#fff, 1px, 1px, 0);
+//     background-color: #f2f2f2;
+//     color: #666;
+//     padding: 0 .5em;
+//   }
+//   a:hover,
+//   a:focus {
+//     background-color: #dedede;
+//     border-color: #999;
+//     color: #333;
+//   }
+//   a.active,
+//   a:active {
+//     @include single-text-shadow(#333, 1px, 1px, 0);
+//     background-color: #666;
+//     border-color: #000;
+//     color: #fff;
+//   }
+// }
+

@@ -1,0 +1,20 @@
+/* "To top" button. Enabled in theme settings.
+   ========================================================================== */
+.js #to-top {
+  display: none;
+}
+
+#to-top {
+  background: #b73b3b;
+  z-index: 1;
+  text-shadow: 1px 1px 0 #6a2222;
+  border-radius: 4px 0 0 4px;
+  color: white;
+}
+
+#to-top {
+  position: fixed;
+  right: 0;
+  bottom: 10px;
+  padding: 1em 1.5em;
+}
