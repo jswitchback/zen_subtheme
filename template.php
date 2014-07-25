@@ -106,7 +106,7 @@
   * Adding js via Drupal libraries for better control over where they are aggregated (SYSTEM, LIBRARIES or THEME)
  *  Implements hook_library().
  */
-function subtheme_library() {
+function zen_subtheme_library() {
 
   // Feature detection and conditional script loading
   $libraries['modernizr'] = array(
@@ -114,7 +114,7 @@ function subtheme_library() {
     'website' => 'modernizr',
     'version' => '1.0',
     'js' => array(
-      drupal_get_path('theme', 'subtheme') . '/js/lib-vendor/modernizr.dev.js' => array(
+      drupal_get_path('theme', 'zen_subtheme') . '/js/lib-vendor/modernizr.dev.js' => array(
         'type' => 'file',
         'weight' => 1000,
         'group' => JS_LIBRARY),
@@ -126,7 +126,7 @@ function subtheme_library() {
     'website' => 'https://github.com/paulirish/matchMedia.js/',
     'version' => '1.0',
     'js' => array(
-      drupal_get_path('theme', 'subtheme') . '/js/lib-vendor/media.match.min.js' => array(
+      drupal_get_path('theme', 'zen_subtheme') . '/js/lib-vendor/media.match.min.js' => array(
         'type' => 'file',
         'weight' => 1002,
         'group' => JS_LIBRARY),
@@ -138,7 +138,7 @@ function subtheme_library() {
     'website' => 'http://wicky.nillia.ms/enquire.js/',
     'version' => '1.0',
     'js' => array(
-      drupal_get_path('theme', 'subtheme') . '/js/lib-vendor/enquire.min.js' => array(
+      drupal_get_path('theme', 'zen_subtheme') . '/js/lib-vendor/enquire.min.js' => array(
         'type' => 'file',
         'weight' => 1003,
         'group' => JS_LIBRARY),
@@ -149,12 +149,12 @@ function subtheme_library() {
     'title' => 'To top scroll button',
     'version' => '1.0',
     'js' => array(
-      drupal_get_path('theme', 'subtheme') . '/js/lib-conditional/to-top-button.js' => array(
+      drupal_get_path('theme', 'zen_subtheme') . '/js/lib-conditional/to-top-button.js' => array(
         'type' => 'file',
         'group' => JS_THEME),
     ),
     'css' => array(
-      drupal_get_path('theme', 'subtheme') . '/css/lib-conditional/to-top-button.css' => array(
+      drupal_get_path('theme', 'zen_subtheme') . '/css/lib-conditional/to-top-button.css' => array(
         'type' => 'file',
         'media' => 'screen',
       ),
@@ -165,7 +165,7 @@ function subtheme_library() {
     'title' => 'Responsive JS',
     'version' => '1.0',
     'js' => array(
-      drupal_get_path('theme', 'subtheme') . '/js/lib-base/responsive-app.js' => array(
+      drupal_get_path('theme', 'zen_subtheme') . '/js/lib-base/responsive-app.js' => array(
         'type' => 'file',
         'weight' => 1004,
         'group' => JS_LIBRARY),
@@ -176,7 +176,7 @@ function subtheme_library() {
     'title' => 'Touch Device JS',
     'version' => '1.0',
     'js' => array(
-      drupal_get_path('theme', 'subtheme') . '/js/lib-conditional/touch.js' => array(
+      drupal_get_path('theme', 'zen_subtheme') . '/js/lib-conditional/touch.js' => array(
         'type' => 'file',
         'weight' => 1005,
         'group' => JS_LIBRARY),
@@ -194,69 +194,69 @@ function subtheme_library() {
  *   An array of variables to pass to the theme template.
  * @param $hook
  *   The name of the template being rendered. This is usually "html", but can
- *   also be "maintenance_page" since subtheme_preprocess_maintenance_page() calls
+ *   also be "maintenance_page" since zen_subtheme_preprocess_maintenance_page() calls
  *   this function to have consistent variables.
  */
-function subtheme_preprocess_html(&$variables, $hook) {
+function zen_subtheme_preprocess_html(&$variables, $hook) {
   // Add variables and paths needed for HTML5 and responsive support.
   $variables['base_path'] = base_path();
-  $variables['path_to_subtheme'] = drupal_get_path('theme', 'subtheme');
+  $variables['path_to_zen_subtheme'] = drupal_get_path('theme', 'zen_subtheme');
 
-  $add_viewport_indicator = theme_get_setting('subtheme_browser_width_indicator');
+  $add_viewport_indicator = theme_get_setting('zen_subtheme_browser_width_indicator');
 
-  $variables['add_to_top'] = theme_get_setting('subtheme_to_top');
+  $variables['add_to_top'] = theme_get_setting('zen_subtheme_to_top');
   $add_to_top = $variables['add_to_top'];
 
-  $variables['subtheme_accordion_menu'] = theme_get_setting('subtheme_accordion_menu');
-  $add_accordion_menu = $variables['subtheme_accordion_menu'];
+  $variables['zen_subtheme_accordion_menu'] = theme_get_setting('zen_subtheme_accordion_menu');
+  $add_accordion_menu = $variables['zen_subtheme_accordion_menu'];
 
   $variables['enable_singularity_grid'] = theme_get_setting('enable_singularity_grid');
   $enable_singularity_grid = $variables['enable_singularity_grid'];
 
-  $variables['add_ms_tile_color'] = theme_get_setting('subtheme_ms_tile_color');
+  $variables['add_ms_tile_color'] = theme_get_setting('zen_subtheme_ms_tile_color');
   $add_ms_tile_color = $variables['add_ms_tile_color'];
 
   if ($add_to_top) {
-    drupal_add_library('subtheme', 'to_top');
+    drupal_add_library('zen_subtheme', 'to_top');
   }
 
   if ($enable_singularity_grid && $variables['is_admin'] ) {
       $variables['attributes_array']['data-development-grid'][] = 'hide';
-      drupal_add_js(drupal_get_path('theme', 'subtheme') . '/js/lib-vendor/grid.js', array('group' => JS_THEME, 'weight' => -10, 'every_page' => TRUE));
-      drupal_add_css(drupal_get_path('theme', 'subtheme') . '/css/lib-vendor/grid.css', array('group' => CSS_THEME, 'weight' => -10, 'every_page' => TRUE));
+      drupal_add_js(drupal_get_path('theme', 'zen_subtheme') . '/js/lib-vendor/grid.js', array('group' => JS_THEME, 'weight' => -10, 'every_page' => TRUE));
+      drupal_add_css(drupal_get_path('theme', 'zen_subtheme') . '/css/lib-vendor/grid.css', array('group' => CSS_THEME, 'weight' => -10, 'every_page' => TRUE));
   }
 
   if ($add_viewport_indicator) {
     if ($variables['is_admin'] && !module_exists('overlay')) {
-      $variables['attributes_array']['class'][] = 'subtheme_browser-width-indicator';
-      drupal_add_js(drupal_get_path('theme', 'subtheme') . '/js/lib-conditional/viewport-indicator.js', array('group' => JS_THEME, 'weight' => -10, 'every_page' => TRUE));
-      drupal_add_css(drupal_get_path('theme', 'subtheme') . '/css/lib-conditional/viewport-indicator.css', array('group' => CSS_THEME, 'weight' => -10, 'every_page' => TRUE));
+      $variables['attributes_array']['class'][] = 'zen_subtheme_browser-width-indicator';
+      drupal_add_js(drupal_get_path('theme', 'zen_subtheme') . '/js/lib-conditional/viewport-indicator.js', array('group' => JS_THEME, 'weight' => -10, 'every_page' => TRUE));
+      drupal_add_css(drupal_get_path('theme', 'zen_subtheme') . '/css/lib-conditional/viewport-indicator.css', array('group' => CSS_THEME, 'weight' => -10, 'every_page' => TRUE));
     }
   }
 
   if (!empty($variables['page']['theming_sidebar']) && $variables['is_admin']) {
     $variables['classes_array'][] = 'has-theming-sidebar';
-    drupal_add_js(drupal_get_path('theme', 'subtheme') . '/js/lib-conditional/theming-sidebar.js', array('type' => 'file'));
-    drupal_add_css(drupal_get_path('theme','subtheme') . '/css/lib-conditional/theming-sidebar.css');
+    drupal_add_js(drupal_get_path('theme', 'zen_subtheme') . '/js/lib-conditional/theming-sidebar.js', array('type' => 'file'));
+    drupal_add_css(drupal_get_path('theme','zen_subtheme') . '/css/lib-conditional/theming-sidebar.css');
   } 
 
   // Add body class, css and js when offcanvas sidebar has block content.
   if (!empty($variables['page']['offcanvas_sidebar'])) {
     $variables['classes_array'][] = 'has-offcanvas-sidebar';
-    drupal_add_js(drupal_get_path('theme', 'subtheme') . '/js/lib-conditional/offcanvas-sidebar.js', array('type' => 'file','weight' => 1050,'group' => JS_LIBRARY));
-    drupal_add_css(drupal_get_path('theme','subtheme') . '/css/lib-conditional/offcanvas-sidebar.css');
+    drupal_add_js(drupal_get_path('theme', 'zen_subtheme') . '/js/lib-conditional/offcanvas-sidebar.js', array('type' => 'file','weight' => 1050,'group' => JS_LIBRARY));
+    drupal_add_css(drupal_get_path('theme','zen_subtheme') . '/css/lib-conditional/offcanvas-sidebar.css');
   } 
 
   if ($add_accordion_menu) {
-    drupal_add_js(drupal_get_path('theme', 'subtheme') . '/js/lib-conditional/toggle-menu.js', array('type' => 'file','weight' => 1055,'group' => JS_LIBRARY));
-    drupal_add_css(drupal_get_path('theme','subtheme') . '/css/lib-conditional/toggle-menu.css');
+    drupal_add_js(drupal_get_path('theme', 'zen_subtheme') . '/js/lib-conditional/toggle-menu.js', array('type' => 'file','weight' => 1055,'group' => JS_LIBRARY));
+    drupal_add_css(drupal_get_path('theme','zen_subtheme') . '/css/lib-conditional/toggle-menu.css');
   }
 
-  drupal_add_library('subtheme', 'modernizr');
-  drupal_add_library('subtheme', 'matchMedia_polyfill');
-  drupal_add_library('subtheme', 'enquire');
-  drupal_add_library('subtheme', 'responsive_js');
-  drupal_add_library('subtheme', 'touch');
+  drupal_add_library('zen_subtheme', 'modernizr');
+  drupal_add_library('zen_subtheme', 'matchMedia_polyfill');
+  drupal_add_library('zen_subtheme', 'enquire');
+  drupal_add_library('zen_subtheme', 'responsive_js');
+  drupal_add_library('zen_subtheme', 'touch');
 
 }
 
@@ -269,12 +269,12 @@ function subtheme_preprocess_html(&$variables, $hook) {
  * @param $hook
  *   The name of the template being rendered ("page" in this case.)
  */
-function subtheme_preprocess_page(&$variables) {
+function zen_subtheme_preprocess_page(&$variables) {
   // Expose theme setting for conditionally loaded markup in page template.
-  $variables['accordion_menu'] = theme_get_setting('subtheme_accordion_menu');
+  $variables['accordion_menu'] = theme_get_setting('zen_subtheme_accordion_menu');
   $add_accordion_menu = $variables['accordion_menu'];
 
-  $variables['add_to_top'] = theme_get_setting('subtheme_to_top');
+  $variables['add_to_top'] = theme_get_setting('zen_subtheme_to_top');
   $add_to_top = $variables['add_to_top'];
 
 }
@@ -287,7 +287,7 @@ function subtheme_preprocess_page(&$variables) {
  * @param $hook
  *   The name of the template being rendered ("region" in this case.)
  */
-// function subtheme_preprocess_region(&$variables, $hook) {
+// function zen_subtheme_preprocess_region(&$variables, $hook) {
 //  if ($variables['region'] == 'navigation') {
 //     $variables['theme_hook_suggestions'][] = 'region__no_wrapper';
 //   }
@@ -306,7 +306,7 @@ function subtheme_preprocess_page(&$variables) {
  * @param $hook
  *   The name of the template being rendered ("node" in this case.)
  */
-// function subtheme_preprocess_node(&$variables, $hook) {
+// function zen_subtheme_preprocess_node(&$variables, $hook) {
     // if ($variables['type'] == 'NODE_MACHINE_NAME' && $variables['view_mode'] == 'teaser') {
     //   $variables['title_attributes_array']['class'][] = 'grid-title';
     // }
@@ -321,7 +321,7 @@ function subtheme_preprocess_page(&$variables) {
  * @param $hook
  *   The name of the template being rendered ("block" in this case.)
  */
-// function subtheme_preprocess_block(&$variables, $hook) {
+// function zen_subtheme_preprocess_block(&$variables, $hook) {
 //   // Add template suggestions to appropriate blocks.
 //   switch ($variables['block']->module) {
 //     case 'system':
@@ -377,11 +377,11 @@ function subtheme_preprocess_page(&$variables) {
 /**
  * Implements hook_block_list_alter().
  */
-function subtheme_block_list_alter(&$blocks) {
+function zen_subtheme_block_list_alter(&$blocks) {
 
   // Hide the main content block on the front page if the theme settings are
   // configured that way.
-  if (!theme_get_setting('subtheme_toggle_front_page_content') && drupal_is_front_page()) {
+  if (!theme_get_setting('zen_subtheme_toggle_front_page_content') && drupal_is_front_page()) {
     foreach ($blocks as $key => $block) {
       if ($block->module == 'system' && $block->delta == 'main') {
         unset($blocks[$key]);
@@ -396,7 +396,7 @@ function subtheme_block_list_alter(&$blocks) {
  * Alter forms.
  *
  */
-function subtheme_form_alter(&$form, &$form_state, $form_id) {
+function zen_subtheme_form_alter(&$form, &$form_state, $form_id) {
   // dpm ($form);
   // dpm ($form_id);
 
@@ -424,14 +424,14 @@ function subtheme_form_alter(&$form, &$form_state, $form_id) {
 }
 
 // Remove tabs from login pages because links are added in a hook_form_alter
-function subtheme_menu_alter(&$items) {
+function zen_subtheme_menu_alter(&$items) {
   $items['user']['type'] = MENU_CALLBACK;
   $items['user/register']['type'] = MENU_CALLBACK;
   $items['user/password']['type'] = MENU_CALLBACK;
 
 }
 
-function subtheme_css_alter(&$css) {
+function zen_subtheme_css_alter(&$css) {
 
   // if (isset($css[drupal_get_path('system', 'lang_dropdown') .'/msdropdown/dd_after.css'])) {
   //   $css[drupal_get_path('module', 'lang_dropdown') .'/msdropdown/dd_after.css']['data'] = drupal_get_path('theme', 'custom') . '/css/custom-dd_after.css';

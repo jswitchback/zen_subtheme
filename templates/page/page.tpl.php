@@ -184,7 +184,6 @@
           <ul class="action-links"><?php print render($action_links); ?></ul>
         <?php endif; ?>
         <?php print render($page['content']); ?>
-        <?php print render($page['front_content']); ?>
         <?php print $feed_icons; ?>
       </div><!-- /#content -->
 

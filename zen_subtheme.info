@@ -12,7 +12,7 @@
 ; page at admin/appearance.
 
 screenshot  = screenshot.png
-name        = Custom Zen Subtheme version 2
+name        = Boilerplate Zen Subtheme
 description = Read the <a href="http://drupal.org/node/873778">online docs</a> or the included README.txt on how to create a theme with Zen.
 
 
@@ -69,7 +69,7 @@ stylesheets[all][] = css/styles.css
 ; Optionally add some JavaScripts to your theme.
 
 ; placeholder plugin as needed http://mths.be/placeholder
-scripts[] = js/lib-base/scripts.js
+; scripts[] = js/lib-base/scripts.js
 
 
 
@@ -93,7 +93,6 @@ regions[navigation]     = Navigation bar
 regions[highlighted]    = Highlighted
 regions[help]           = Help
 regions[content]        = Content
-regions[front_content]  = Homepage Content
 regions[offcanvas_sidebar] = Offcanvas Sidebar
 regions[sidebar_first]  = First sidebar
 regions[sidebar_second] = Second sidebar

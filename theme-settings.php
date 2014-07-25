@@ -7,7 +7,7 @@
  * @param $form_state
  *   A keyed array containing the current state of the form.
  */
-function subtheme_form_system_theme_settings_alter(&$form, &$form_state, $form_id = NULL)  {
+function zen_subtheme_form_system_theme_settings_alter(&$form, &$form_state, $form_id = NULL)  {
   // Work-around for a core bug affecting admin themes. See issue #943212.
   if (isset($form_id)) {
     return;
@@ -31,38 +31,38 @@ function subtheme_form_system_theme_settings_alter(&$form, &$form_state, $form_i
 
  // We are editing the $form in place, so we don't need to return anything.
 
-  $form['subtheme_responsive_settings'] = array(
+  $form['zen_subtheme_responsive_settings'] = array(
     '#type'          => 'fieldset',
     '#title'         => t('Responsive app settings'),
   );
 
- $form['subtheme_settings'] = array(
+ $form['zen_subtheme_settings'] = array(
     '#type'          => 'fieldset',
     '#title'         => t('Additionally custom theme settings'),
   );
 
-  $form['subtheme_settings']['subtheme_ms_tile_color'] = array(
+  $form['zen_subtheme_settings']['zen_subtheme_ms_tile_color'] = array(
     '#type'          => 'textfield',
     '#field_prefix'  => '#',
     '#title' => t('Meta tag color used for Windows background tile'),
-    '#default_value' => theme_get_setting('subtheme_ms_tile_color'),
+    '#default_value' => theme_get_setting('zen_subtheme_ms_tile_color'),
     '#size'          => 6,
     '#maxlength'     => 6,
   );
 
-  $form['subtheme_settings']['subtheme_to_top'] = array(
+  $form['zen_subtheme_settings']['zen_subtheme_to_top'] = array(
     '#type'          => 'checkbox',
     '#title'         => t('Add Scroll to top button.'),
-    '#default_value' => theme_get_setting('subtheme_to_top'),
+    '#default_value' => theme_get_setting('zen_subtheme_to_top'),
   );
 
-  $form['subtheme_responsive_settings']['subtheme_accordion_menu'] = array(
+  $form['zen_subtheme_responsive_settings']['zen_subtheme_accordion_menu'] = array(
     '#type'          => 'checkbox',
     '#title'         => t('Collapse menu into accordion on small viewports'),
-    '#default_value' => theme_get_setting('subtheme_accordion_menu'),
+    '#default_value' => theme_get_setting('zen_subtheme_accordion_menu'),
   );
 
-  $form['subtheme_responsive_settings']['enable_singularity_grid'] = array(
+  $form['zen_subtheme_responsive_settings']['enable_singularity_grid'] = array(
     '#type'          => 'checkbox',
     '#title'         => t('Include CSS3 grid via Compass mixin. Toggle with the') . '<code>g</code>' . t(' key.'),
     '#description'   => t('Note: Sub-pixel rounding can lead to several pixels of variation between browsers. Viewable by admin users only. Adjust grid in the grid.scss file.'),
@@ -70,24 +70,24 @@ function subtheme_form_system_theme_settings_alter(&$form, &$form_state, $form_i
   );
 
   // Custom option for toggling the main content blog on the front page.
-  $form['subtheme_settings']['subtheme_toggle_front_page_content'] = array(
+  $form['zen_subtheme_settings']['zen_subtheme_toggle_front_page_content'] = array(
     '#type' => 'checkbox',
     '#title' => t('Front page content'),
     '#description' => t('Allow the main content block to be rendered on the front page.'),
-    '#default_value' => theme_get_setting('subtheme_toggle_front_page_content'),
+    '#default_value' => theme_get_setting('zen_subtheme_toggle_front_page_content'),
   );
 
-  $form['subtheme_settings']['subtheme_browser_width_indicator'] = array(
+  $form['zen_subtheme_settings']['zen_subtheme_browser_width_indicator'] = array(
     '#type' => 'checkbox',
     '#title' => t('Browser width indicator'),
     '#description' => t('Adds a small box at the bottom of the browser window that displays the current width of the browser window. This can be very useful when writing media queries for a responsive website.'),
-    '#default_value' => theme_get_setting('subtheme_browser_width_indicator'),
+    '#default_value' => theme_get_setting('zen_subtheme_browser_width_indicator'),
   );
-  $form['subtheme_settings']['subtheme_conditional_classes_html'] = array(
+  $form['zen_subtheme_settings']['zen_subtheme_conditional_classes_html'] = array(
     '#type' => 'checkbox',
     '#title' => t('Add conditional classes for Internet Explorer'),
     '#description' => t('Adds conditional classes (for Internet Explorer) to the &lt;html&gt;.'),
-    '#default_value' => theme_get_setting('subtheme_conditional_classes_html'),
+    '#default_value' => theme_get_setting('zen_subtheme_conditional_classes_html'),
   );
 
 }
