@@ -26,60 +26,14 @@ body {
 /* Header
    ========================================================================== */
 
-
-/* Wrapping link for logo. */
 .header__logo {
-  float: left; /* LTR */
+  float: left;
   margin: 0;
   padding: 0;
 }
 
-/* Logo image. */
-.header__logo-image {
-  vertical-align: bottom;
-}
-
-
-.header__name-and-slogan {
-  float: left;
-  height: 200px;
-}
-
-/* The name of the website. */
-.header__site-name {
-  margin: 0;
-  @include adjust-font-size-to( $h1-font-size );
-}
-
-/* The link around the name of the website. */
-.header__site-link {
-  &:link,
-  &:visited {
-    color: #000;
-    text-decoration: none;
-  }
-
-  &:hover,
-  &:focus {
-    text-decoration: underline;
-  }
-}
-
-/* The slogan (or tagline) of a website. */
-.header__site-slogan {
-  margin: 0;
-}
-
-/* The secondary menu (login, etc.) */
 .header__secondary-menu {
-  float: right; /* LTR */
-}
-
-/* Wrapper for any blocks placed in the header region. */
-.header__region {
-  /* Clear the logo. */
-  clear: both;
-}
+  float: right; 
 
 
 /* Main / Content
@@ -90,22 +44,6 @@ body {
 }
 
 #content {
-}
-
-.region-help { /* Help text on a page */
-}
-
-.more-help-link { /* Link to more help */
-}
-
-span.field-label { /* The inline field label used by the Fences module */
-  padding: 0 1em 0 0; /* LTR */
-}
-
-.feed-icon { /* The link to the RSS or Atom feed for the current list of content */
-}
-
-.more-link { /* Aggregator, blog, and forum more link */
 }
 
 
