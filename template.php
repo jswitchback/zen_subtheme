@@ -205,16 +205,16 @@ function zen_subtheme_preprocess_html(&$variables, $hook) {
   $viewport_indicator = theme_get_setting('zen_subtheme_browser_width_indicator');
 
   $variables['to_top'] = theme_get_setting('zen_subtheme_to_top');
-  $add_to_top = $variables['to_top'];
+  $to_top = $variables['to_top'];
 
   $variables['accordion_menu'] = theme_get_setting('zen_subtheme_accordion_menu');
-  $add_accordion_menu = $variables['accordion_menu'];
+  $accordion_menu = $variables['accordion_menu'];
 
   $variables['compass_grid'] = theme_get_setting('zen_subtheme_compass_grid');
-  $enable_compass_grid = $variables['compass_grid'];
+  $compass_grid = $variables['compass_grid'];
 
   $variables['ms_tile_color'] = theme_get_setting('zen_subtheme_ms_tile_color');
-  $add_ms_tile_color = $variables['ms_tile_color'];
+  $ms_tile_color = $variables['ms_tile_color'];
 
   if ($to_top) {
     drupal_add_js(drupal_get_path('theme', 'd7theme') . '/js/lib-vendor/jquery.smooth-scroll.js',  array('type' => 'file','weight' => 1045,'group' => JS_LIBRARY));
