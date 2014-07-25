@@ -52,7 +52,8 @@ function zen_subtheme_form_system_theme_settings_alter(&$form, &$form_state, $fo
 
   $form['zen_subtheme_settings']['zen_subtheme_to_top'] = array(
     '#type'          => 'checkbox',
-    '#title'         => t('Add Scroll to top button.'),
+    '#title'         => t('Add scroll to top button.'),
+    '#description'   => t('Includes jQuery Smooth Scroll.'),
     '#default_value' => theme_get_setting('zen_subtheme_to_top'),
   );
 
@@ -62,11 +63,11 @@ function zen_subtheme_form_system_theme_settings_alter(&$form, &$form_state, $fo
     '#default_value' => theme_get_setting('zen_subtheme_accordion_menu'),
   );
 
-  $form['zen_subtheme_responsive_settings']['enable_compass_grid'] = array(
+  $form['zen_subtheme_responsive_settings']['zen_subtheme_compass_grid'] = array(
     '#type'          => 'checkbox',
     '#title'         => t('Include CSS3 grid via Compass mixin. Toggle with the') . '<code>g</code>' . t(' key.'),
     '#description'   => t('Note: Sub-pixel rounding can lead to several pixels of variation between browsers. Viewable by admin users only. Adjust grid in the grid.scss file.'),
-    '#default_value' => theme_get_setting('enable_compass_grid'),
+    '#default_value' => theme_get_setting('zen_subtheme_compass_grid'),
   );
 
   // Custom option for toggling the main content blog on the front page.

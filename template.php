@@ -202,31 +202,32 @@ function zen_subtheme_preprocess_html(&$variables, $hook) {
   $variables['base_path'] = base_path();
   $variables['path_to_zen_subtheme'] = drupal_get_path('theme', 'zen_subtheme');
 
-  $add_viewport_indicator = theme_get_setting('zen_subtheme_browser_width_indicator');
+  $viewport_indicator = theme_get_setting('zen_subtheme_browser_width_indicator');
 
-  $variables['add_to_top'] = theme_get_setting('zen_subtheme_to_top');
-  $add_to_top = $variables['add_to_top'];
+  $variables['to_top'] = theme_get_setting('zen_subtheme_to_top');
+  $add_to_top = $variables['to_top'];
 
-  $variables['zen_subtheme_accordion_menu'] = theme_get_setting('zen_subtheme_accordion_menu');
-  $add_accordion_menu = $variables['zen_subtheme_accordion_menu'];
+  $variables['accordion_menu'] = theme_get_setting('zen_subtheme_accordion_menu');
+  $add_accordion_menu = $variables['accordion_menu'];
 
-  $variables['enable_compass_grid'] = theme_get_setting('enable_compass_grid');
-  $enable_compass_grid = $variables['enable_compass_grid'];
+  $variables['compass_grid'] = theme_get_setting('zen_subtheme_compass_grid');
+  $enable_compass_grid = $variables['compass_grid'];
 
-  $variables['add_ms_tile_color'] = theme_get_setting('zen_subtheme_ms_tile_color');
-  $add_ms_tile_color = $variables['add_ms_tile_color'];
+  $variables['ms_tile_color'] = theme_get_setting('zen_subtheme_ms_tile_color');
+  $add_ms_tile_color = $variables['ms_tile_color'];
 
-  if ($add_to_top) {
+  if ($to_top) {
+    drupal_add_js(drupal_get_path('theme', 'd7theme') . '/js/lib-vendor/jquery.smooth-scroll.js',  array('type' => 'file','weight' => 1045,'group' => JS_LIBRARY));
     drupal_add_library('zen_subtheme', 'to_top');
   }
 
-  if ($enable_compass_grid && $variables['is_admin'] ) {
+  if ($compass_grid && $variables['is_admin'] ) {
       $variables['attributes_array']['data-development-grid'][] = 'hide';
       drupal_add_js(drupal_get_path('theme', 'zen_subtheme') . '/js/lib-conditional/grid.js', array('group' => JS_THEME, 'weight' => -10, 'every_page' => TRUE));
       drupal_add_css(drupal_get_path('theme', 'zen_subtheme') . '/css/lib-conditional/grid.css', array('group' => CSS_THEME, 'weight' => -10, 'every_page' => TRUE));
   }
 
-  if ($add_viewport_indicator) {
+  if ($viewport_indicator) {
     if ($variables['is_admin'] && !module_exists('overlay')) {
       $variables['attributes_array']['class'][] = 'zen_subtheme_browser-width-indicator';
       drupal_add_js(drupal_get_path('theme', 'zen_subtheme') . '/js/lib-conditional/viewport-indicator.js', array('group' => JS_THEME, 'weight' => -10, 'every_page' => TRUE));
@@ -247,7 +248,7 @@ function zen_subtheme_preprocess_html(&$variables, $hook) {
     drupal_add_css(drupal_get_path('theme','zen_subtheme') . '/css/lib-conditional/offcanvas-sidebar.css');
   } 
 
-  if ($add_accordion_menu) {
+  if ($accordion_menu) {
     drupal_add_js(drupal_get_path('theme', 'zen_subtheme') . '/js/lib-conditional/toggle-menu.js', array('type' => 'file','weight' => 1055,'group' => JS_LIBRARY));
     drupal_add_css(drupal_get_path('theme','zen_subtheme') . '/css/lib-conditional/toggle-menu.css');
   }
