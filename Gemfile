@@ -9,7 +9,6 @@ gem "sass", '~> 3.3'                 # Sass version with source-maps https://git
 gem 'compass', '~>1.0.0.alpha.19'    # Framework built on Sass.
 gem 'compass-rgbapng'                # Turns rgba() into .png's for backwards compatibility.
 gem 'singularitygs'                  # Alternative to the Susy grid framework.
-gem 'zen-grids'                      # Grid library ... to be deprecated
 gem 'breakpoint'                     # Manages CSS media queries.
 gem 'compass-css-arrow'              # Easy css3 arrows
 #gem 'sassy-buttons'                  # Easy css3 buttons

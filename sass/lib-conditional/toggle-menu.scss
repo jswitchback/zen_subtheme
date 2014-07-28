@@ -17,12 +17,9 @@ $nav-color: $link-color;
     @include transition(max-height .5s cubic-bezier(.17,.67,.66,1.04));
     max-height: 0;
   }
-  @include breakpoint($tablet-portrait-min) {
-    max-height: 30em;
-  }
 } 
 
-.js body.show-nav #navigation {
+.show-nav #navigation {
   max-height: 30em;
 }
 

@@ -11,7 +11,7 @@
   top: 0;
   z-index: 200;
   height: 100%;
-  @include translateX(-275px);
+  @include translateX(-280px);
   @include transition-property(all);
   @include transition-duration(.15s);
   @include transition-timing-function(cubic-bezier(.455,.03,.515,.955));
@@ -32,9 +32,9 @@
   }
 } 
 
-.no-csstransforms.no-csstransitions {
+.no-csstransforms {
   #theming-sidebar {
-    left: -270px;
+    left: -280px;
     &.active {
       left: 0;
     }

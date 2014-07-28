@@ -63,31 +63,26 @@
           $offcanvasClose = $('#close-canvas'),
           $body = $('body');
       
-      //$body.addClass('mobile-nav');
-
       $($offcanvasToggle).bind('click', function(event){
         event.preventDefault();
         event.stopPropagation();
-
         $body.toggleClass('show-canvas');
-
       });
 
       $($offcanvasClose).bind('click', function(event){
         event.preventDefault();
         event.stopPropagation();
-
         $offcanvasToggle.click();
-
         $body.removeClass('show-canvas');
-
       });
+      if (Modernizr.touch) {
+
+      }
+
     },
     reinit : function () {
-      // $('body').addClass('mobile-nav');
     },
     destroy : function () {
-      // $('body').removeClass('mobile-nav');
     }
   };
 

@@ -13,31 +13,30 @@
 
 (function ($, Drupal, window, document, undefined) {
   
-// Mobile Nav toggle
+// Mobile
 $(document).ready(function() {
     
-  enquire.register("screen and (min-width:47.5em)", {
+  enquire.register("screen and (max-width:47.9375em)", {
 
       // OPTIONAL
       // If supplied, triggered when a media query matches.
       match : function() {
-        // alert('min 45em');
-        toggleMenu.reinit();
+        // alert('match');
+        toggleMenu.init();
       },
                                   
       // OPTIONAL
       // If supplied, triggered when the media query transitions 
       // *from a matched state to an unmatched state*.
       unmatch : function() {
-        // alert('leaving min 45em');
+        // alert('unmatch');
         toggleMenu.destroy();
       },
       
       // OPTIONAL
       // If supplied, triggered once, when the handler is registered.
       setup : function() {
-        // alert('set up min 45em');
-        toggleMenu.init();
+        // alert('handler registered');
       },
                                   
       // OPTIONAL, defaults to false
@@ -61,6 +60,8 @@ $(document).ready(function() {
       var mainMenu = $('#navigation'),
           mainNavToggle = $('#toggle-nav'),
           $body = $('body');
+
+      $('#admin-menu').hide();
       
       $(mainNavToggle).on('click', function(event){
         event.preventDefault();
@@ -71,10 +72,9 @@ $(document).ready(function() {
 
     },
     reinit : function () {
-      // $('body').addClass('mobile-nav');
     },
     destroy : function () {
-      // $('body').removeClass('mobile-nav');
+      $('body').removeClass('show-nav');
     }
   };
 

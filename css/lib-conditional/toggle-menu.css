@@ -1,6 +1,6 @@
 /* Behavior
    ========================================================================= */
-@media (max-width: 47.4375em) {
+@media (max-width: 47.9375em) {
   .js #navigation {
     overflow: hidden;
     -moz-transition: max-height 0.5s cubic-bezier(0.17, 0.67, 0.66, 1.04);
@@ -9,20 +9,15 @@
     max-height: 0;
   }
 }
-@media (min-width: 47.5em) {
-  .js #navigation {
-    max-height: 30em;
-  }
-}
 
-.js body.show-nav #navigation {
+.show-nav #navigation {
   max-height: 30em;
 }
 
 #toggle-nav {
   float: right;
 }
-@media (min-width: 47.5em) {
+@media (min-width: 48em) {
   #toggle-nav {
     display: none;
   }
@@ -120,7 +115,7 @@
 /*
  * Desktop Styles
  */
-@media (min-width: 47.5em) {
+@media (min-width: 48em) {
   #navigation {
     margin-left: 0;
     margin-right: 0;
