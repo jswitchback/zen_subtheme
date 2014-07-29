@@ -69,6 +69,65 @@ $horiz-gutter: 24px;
 
 
 
+
+// =============================================================================
+// SINGULARITY GRID REFERENCE --- https://github.com/Team-Sass/Singularity/wiki/Spanning-The-Grid
+// =============================================================================
+
+
+////////
+// OUTPUT STYLES: 
+// https://github.com/Team-Sass/Singularity/wiki/Output-Styles
+// Isolation: floats with margin left and right forcing elements into columns.
+// Float: typical float without margins forcing elements into columns
+////////
+
+
+/////////
+// Overrides the global Grid context provided by $grids with a 12 column symmetric grid
+// .override-grid-symmetric {
+//   @include grid-span(1, 2, 12);
+// }
+
+// Overrides the global Grid context provided by $grids with a 2 4 5 asymmetric grid
+// .override-grid-asymmetric {
+//   @include grid-span(1, 2, (2 4 5));
+// }
+
+// Overrides the global Gutter context provided by $gutters with a .25 gutter
+// .override-gutter {
+//   @include grid-span(1, 2, $gutter: .25);
+// }
+
+// Overrides the global Output Style context provided by $output the Isolation output style
+// .override-output-style {
+//   @include grid-span(1, 2, $output-style: 'float');
+// }
+
+// Overrides the global Grid context provided by $grids with a 12 column symmetric grid, the global Gutter context by $gutters with a .25 gutter, and the global Output Style context provided by $output with the Isolation output style
+// .override-all-the-things {
+//   @include grid-span(1, 2, 12, .25, 'float');
+// }
+
+// // Simplifies use of $options for Isolation Output Style
+// @include grid-span(2, 3, $output-style: 'isolation', $options: 'both');
+/////////
+
+
+/////////
+// You can also include each output style explicitily in it's own mixin with different arguments
+
+// @include isolation-span(2, 3, 'right', (2 8 2 1), .25);
+// (span ? columns, starting column, clear, grid, gutter)
+// @include float-span(3, $grid: 5, $gutter: .25);
+// (span ? columns, grid, gutter)
+/////////
+
+
+
+
+
+
 // =============================================================================
 // COMPASS GRID OVERLAY HELPER VARIABLES ... See http://compass-style.org/reference/compass/layout/grid_background/
 // =============================================================================
