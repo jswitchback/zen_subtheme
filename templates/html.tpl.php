@@ -81,11 +81,10 @@
   <?php print $head; ?>
   <title><?php print $head_title; ?></title>
 
-  <?php if ($default_mobile_metatags): ?>
-    <meta name="MobileOptimized" content="width">
-    <meta name="HandheldFriendly" content="true">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-  <?php endif; ?>
+  <meta name="MobileOptimized" content="width">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <meta name="application-name" content="<?php print $head_title_array['name']; ?>">
   <meta name="msapplication-TileColor" content="#<?php print $ms_tile_color; ?>">
   <meta name="msapplication-TileImage" content="<?php print $GLOBALS['base_url'] . '/' . $path_to_zen_subtheme; ?>/images/app-icons/ms-application-icon-144x144.png">
