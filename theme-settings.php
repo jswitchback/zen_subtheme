@@ -64,7 +64,7 @@ function zen_subtheme_form_system_theme_settings_alter(&$form, &$form_state, $fo
 
   $form['zen_subtheme_responsive_settings']['zen_subtheme_compass_grid'] = array(
     '#type'          => 'checkbox',
-    '#title'         => t('Include CSS3 grid via Compass mixin. Toggle with the') . '<code>g</code>' . t(' key.'),
+    '#title'         => t('Include CSS3 grid via Compass mixin. Toggle with the ') . '<code>g</code>' . t(' key.'),
     '#description'   => t('Note: Sub-pixel rounding can lead to several pixels of variation between browsers. Viewable by admin users only. Adjust grid in the grid.scss file.'),
     '#default_value' => theme_get_setting('zen_subtheme_compass_grid'),
   );
