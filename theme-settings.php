@@ -24,10 +24,9 @@ function zen_subtheme_form_system_theme_settings_alter(&$form, &$form_state, $fo
   );
   // */
 
-  // Remove some of the base theme's settings.
-  /* -- Delete this line if you want to turn off this setting.
+  // Remove some of the base theme's settings.  
+  unset($form['themedev']['zen_layout']);
   unset($form['themedev']['zen_wireframes']); // We don't need to toggle wireframes on this site.
-  // */
 
  // We are editing the $form in place, so we don't need to return anything.
 
