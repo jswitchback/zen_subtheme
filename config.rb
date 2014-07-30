@@ -29,8 +29,6 @@ javascripts_dir = "js"
 
 require 'compass/import-once/activate'
 # Require any additional compass plugins installed on your system.
-#require 'ninesixty'
-require 'zen-grids'
 require 'breakpoint'
 require 'rgbapng'
 require 'singularitygs'
