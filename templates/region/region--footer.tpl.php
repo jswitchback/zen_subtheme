@@ -27,7 +27,7 @@
  */
 ?>
 <?php if ($content): ?>
-	<footer id="footer-wrpr">
+	<footer id="footer-wrapper">
 	  <div id="footer" class="<?php print $classes; ?>">
 	    <?php print $content; ?>
 	  </div><!-- region__footer -->

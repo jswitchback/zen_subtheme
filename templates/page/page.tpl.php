@@ -81,8 +81,8 @@
    $theming_sidebar= render($page['theming_sidebar']);
   ?>
 
- <div id= "header-wrapper">
-    <header id="header" role="banner">
+ <header id= "header-wrapper">
+    <div id="header" role="banner">
 
     <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo"><img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" /></a>
       <?php print render($page['header']); ?>
@@ -159,8 +159,8 @@
 
       </div><!-- /#navigation -->
 
-    </header>
-  </div><!-- /#header-wrapper -->
+    </div>
+  </header><!-- /#header-wrapper -->
 
   <?php print $highlighted; ?>
 
