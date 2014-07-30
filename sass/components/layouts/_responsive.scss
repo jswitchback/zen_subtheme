@@ -21,7 +21,6 @@ html {
 #main,
 #header,
 #footer,
-#page-title,
 .region-bottom {
   margin-left: auto;
   margin-right: auto;
@@ -49,9 +48,7 @@ html {
 
 #header,
 #main,
-.region-highlighted,
-#page-title,
-.region-footer .region-inner {
+.region-highlighted {
   @include micro-clearfix;
 }
 
