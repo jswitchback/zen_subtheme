@@ -203,7 +203,7 @@ ul.tabs-primary {
     &.is-active {
       a {
         background-color: $tab-color;
-        color: $grey-text;
+        color: #494949;
         border: 1px solid #d1d1d1;
       }
     }
@@ -221,7 +221,7 @@ ul.tabs-primary {
         border: 1px solid darken($tab-color, 10%);
       }
       &.active {
-        background: none repeat scroll 0 0 #ffffff;
+        background-color: #ffffff;
         color: #494949;
         &:hover {
         }
