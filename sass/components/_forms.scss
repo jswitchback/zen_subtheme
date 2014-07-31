@@ -628,7 +628,7 @@ tr.selected td {
   background-color: #f1f1f1;
   padding: 24px;
   fieldset {
-    @include clear-floats;
+    @include micro-clearfix;
     background: none;
     border: none;
     padding: 0;
