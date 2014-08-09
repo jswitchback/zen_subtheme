@@ -119,7 +119,6 @@ h1, h2, h3, h4, h5, h6 {
 .comments__title,      /* Comment section heading. */
 .comments__form-title, /* Comment form heading. */
 .comment__title {      /* Comment title. */
-  // margin: 0;
   font-family: $header-font;
   font-weight: bold;
 }
@@ -129,8 +128,9 @@ h1, h2, h3, h4, h5, h6 {
  color: $block-title-color;
 }
 
-#page-title {
- font-family: $page-title-font;
+.page__title {
+  color: $page-title-color;
+  font-family: $page-title-font;
 }
 
 .field-label {
@@ -224,16 +224,9 @@ samp,
 tt,
 var {
   font-family: $font-monospace; /* The $font-monospace value ends with ", serif". */
-  margin: rhythm(2) rhythm(1.5);
-  overflow: auto;
-  padding: $vert-gutter;
-  color: #fff;
-  background: #f1f1f1;
   @if $legacy-support-for-ie6 {
     _font-family: 'courier new', monospace;
   }
-  font-size:( .875 * $base-font-size );
-  line-height: 1.5em;
 }
 
 p {

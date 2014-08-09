@@ -93,12 +93,12 @@ regions[navigation]     = Navigation bar
 regions[highlighted]    = Highlighted
 regions[help]           = Help
 regions[content]        = Content
-regions[offcanvas_sidebar] = Offcanvas Sidebar
+regions[offcanvas_sidebar] = Offcanvas sidebar
 regions[sidebar_first]  = First sidebar
 regions[sidebar_second] = Second sidebar
 regions[footer]         = Footer
 regions[bottom]         = Page bottom
-regions[theming_sidebar]= Theming Sidebar Region
+regions[theming_sidebar]= Theming sidebar region
 
 
 ; The page_top and page_bottom regions are hidden, which means they will not

@@ -167,7 +167,7 @@ $input-border-radius: $ui-border-radius;
 
 $input-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
 $input-box-shadow-focus: 0 0 2px $link-color;
-$input-focus-transition-timing: .2s;
+$input-focus-transition-timing: .1s;
 
 $input-disabled-background-color: $disabled-background-color;
 $input-disabled-font-color: $disabled-font-color;
@@ -178,6 +178,9 @@ $width-large: 220px;
 $width-xlarge: 220px;
 $width-xxlarge: 380px;
 $inline-field-gutter: .5em;
+
+$placeholder-color: #999999;
+$placeholder-focus-color: $input-background-color;
 
 
 // TABLES

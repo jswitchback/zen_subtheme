@@ -38,4 +38,5 @@ gem 'terminal-notifier-guard'
 # Run 'bundle check' to check dependencies without installing new gems.
 # Run `bundle exec compass watch` instead of simply `compass watch` to compile and live reload with project specific gems.
 # Run 'bundle exec compass compile --sourcemap' to compile project gems with sourcemaps
+# Run 'bundle exec compass watch --sourcemap' to continuously compile project gems with sourcemaps
 

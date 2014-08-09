@@ -214,48 +214,54 @@ a:active {
 }
 
 
- /* Placeholder and highlight color
-    ========================================================================== */
+/* Input placeholder color
+  ========================================================================== */
 
 
- ::-webkit-input-placeholder {
-  @include transition-all;
-   color: lighten($body-font-color, 20%);
-   &:focus {
-     color: lighten($body-font-color, 75%);
-   }
- }
-
- // Make disappear on focus in iOS... This works in Chrome as opposed to the above focus style
- :focus::-webkit-input-placeholder{
-  color:lighten($body-font-color, 75%);
- }
-
- :-moz-placeholder { /* Firefox 18- */
-  color: lighten($body-font-color, 20%);
+::-webkit-input-placeholder {
+@include transition-all;
+  color: $placeholder-color;
   &:focus {
-    color: lighten($body-font-color, 75%);
+   color: $placeholder-focus-color;
   }
- }
+}
 
- ::-moz-placeholder {  /* Firefox 19+ */
-  color: lighten($body-font-color, 20%);
-  &:focus {
-    color: lighten($body-font-color, 75%);
-  }
- }
+// Make disappear on focus in iOS... This works in Chrome as opposed to the above focus style
+:focus::-webkit-input-placeholder{
+  color: $placeholder-focus-color;
+}
 
- :-ms-input-placeholder {  
-  color: lighten($body-font-color, 20%);
+:-moz-placeholder { /* Firefox 18- */
+  color: $placeholder-color;
   &:focus {
-    color: lighten($body-font-color, 75%);
+   color: $placeholder-focus-color;
   }
- }
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+  color: $placeholder-color;
+  &:focus {
+   color: $placeholder-focus-color;
+  }
+}
+
+:-ms-input-placeholder {  
+  color: $placeholder-color;
+  &:focus {
+   color: $placeholder-focus-color;
+  }
+}
+
+
+/* Text highlight color
+  ========================================================================== */
+
 
 ::selection {
   background: $link-color; /* Safari */
   color: lighten($link-color, 60%);
-  }
+}
+
 ::-moz-selection {
   background: $link-color; /* Firefox */
   color: lighten($link-color, 60%);
