@@ -43,6 +43,8 @@
    right: 0;
    top: 0;
    width: 280px;
+   overflow-y: scroll;
+   height: 100%;
    float: none;
    z-index: 0;
    -webkit-backface-visibility: hidden;
