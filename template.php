@@ -237,7 +237,6 @@ function zen_subtheme_preprocess_html(&$variables, $hook) {
 
   if (!empty($variables['page']['theming_sidebar']) && $variables['is_admin']) {
     $variables['classes_array'][] = 'has-theming-sidebar';
-    drupal_add_js(drupal_get_path('theme', 'zen_subtheme') . '/js/lib-conditional/theming-sidebar.js', array('type' => 'file'));
     drupal_add_css(drupal_get_path('theme','zen_subtheme') . '/css/lib-conditional/theming-sidebar.css');
   } 
 

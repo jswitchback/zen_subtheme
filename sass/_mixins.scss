@@ -364,7 +364,18 @@ $baseline-px: $base-font-size;
 ////////////////////////////
 
 
-
+/* Warning: ie8 sees this code with respond.js. Add ie8 specific 1x images back in.
+Example with conditional class found on html element (html.tpl)
+@include retina-query {
+  .logo {
+    background-image: url( ....@2x.png);
+    background-size: XXpx XXpx;
+  }
+  .ie-8 .logo {
+    background-image: url( ....@1x.png);
+  }
+}
+ */
 @mixin retina-query {
   @media
   only screen and (-webkit-min-device-pixel-ratio: 2),

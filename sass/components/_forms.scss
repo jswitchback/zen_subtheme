@@ -193,7 +193,8 @@ input {
   @include box-shadow($input-box-shadow);
   @include border-radius($input-border-radius);
   @include box-sizing(border-box);
-  @include transition-property(all); 
+  // Avoiding "all" because Drupal Ajax throbber is effected by background-position transitioning
+  @include transition-property(border, box-shadow, color, background-color); 
   @include transition-duration($input-focus-transition-timing);
   @include transition-timing-function(ease-in);
   padding: $input-padding;
