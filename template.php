@@ -307,9 +307,17 @@ function zen_subtheme_preprocess_page(&$variables) {
  *   The name of the template being rendered ("node" in this case.)
  */
 // function zen_subtheme_preprocess_node(&$variables, $hook) {
-    // if ($variables['type'] == 'NODE_MACHINE_NAME' && $variables['view_mode'] == 'teaser') {
-    //   $variables['title_attributes_array']['class'][] = 'grid-title';
-    // }
+  // if ($variables['type'] == 'NODE_MACHINE_NAME' && $variables['view_mode'] == 'teaser') {
+  //   $variables['title_attributes_array']['class'][] = 'grid-title';
+  // }
+  
+  // Optionally, run node-type-specific preprocess functions, like
+  // STARTERKIT_preprocess_node_page() or STARTERKIT_preprocess_node_story().
+  // $function = __FUNCTION__ . '_' . $variables['node']->type;
+  // if (function_exists($function)) {
+  //   $function($variables, $hook);
+  // }
+
 // }
 
 

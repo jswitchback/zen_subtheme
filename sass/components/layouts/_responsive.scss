@@ -24,8 +24,11 @@ html {
 .region-bottom {
   margin-left: auto;
   margin-right: auto;
-  min-width: $min-layout;
   max-width: $max-layout;
+}
+
+#page {
+  min-width: $min-layout;
 }
 
 #header,
