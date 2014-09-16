@@ -329,7 +329,7 @@ function zen_subtheme_preprocess_page(&$variables) {
  *   The name of the template being rendered ("block" in this case.)
  */
 function zen_subtheme_preprocess_block(&$variables, $hook) {
-  // Add block class so we don't have to style by an id.
+  // Add block class so we don't have to style by id
   // dpm($variables['block']->module);
   // ... to add blocks from other modules
   switch ($variables['block']->module) {
@@ -337,7 +337,7 @@ function zen_subtheme_preprocess_block(&$variables, $hook) {
     case 'menu':
     case 'menu_block':
     case 'block':
-    case 'views':      
+    case 'views':
       // Add a class equal to the id minus "block-"
       $block_id = $variables['block_html_id'];
       $block_id = str_replace('block-', '', $block_id);
