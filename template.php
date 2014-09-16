@@ -320,7 +320,6 @@ function zen_subtheme_preprocess_page(&$variables) {
 
 // }
 
-
 /**
  * Override or insert variables into the block templates.
  *
@@ -329,49 +328,38 @@ function zen_subtheme_preprocess_page(&$variables) {
  * @param $hook
  *   The name of the template being rendered ("block" in this case.)
  */
-// function zen_subtheme_preprocess_block(&$variables, $hook) {
-//   // Add template suggestions to appropriate blocks.
-//   switch ($variables['block']->module) {
-//     case 'system':
-//       switch ($variables['block']->delta) {
-//         case 'help':
-//         case 'powered-by':
-//           break;
+function zen_subtheme_preprocess_block(&$variables, $hook) {
+  // Add block class so we don't have to style by an id.
+  // dpm($variables['block']->module);
+  // ... to add blocks from other modules
+  switch ($variables['block']->module) {
+    case 'system':
+    case 'menu':
+    case 'menu_block':
+    case 'block':
+    case 'views':      
+      // Add a class equal to the id minus "block-"
+      $block_id = $variables['block_html_id'];
+      $block_id = str_replace('block-', '', $block_id);
+      $variables['classes_array'][] = $block_id;
+      break;
+  }
 
-//         case 'main':
-//           // Use a template with no wrapper for the page's main content.
-//           $variables['theme_hook_suggestions'][] = 'block__no_wrapper';
-//           break;
-
-//         default:
-//           // Any other "system" block is a menu block and should use block--nav.tpl.php
-//           $variables['theme_hook_suggestions'][] = 'block__nav';
-//           break;
-//       }
-//       break;
-
-//     case 'menu':
-//     case 'menu_block':
-//       // Use block--nav.tpl.php template.
-//       $variables['theme_hook_suggestions'][] = 'block__nav';
-//       break;
-//   }
-
-// Change theme templates, add classes and/or replace IDs 
-// Output block id's with devel
-// dpm ($variables);
-// dpm ($variables['block_html_id']);
-// switch ($variables['block_html_id']) {
-//    // case 'block-block-7':
-//    // case 'block-8':
-//    // case 'block-9':
-//    //     $variables['classes_array'][] = 'new-class';
-//    //     $variables['block_html_id'] = 'replace-id';
-//    //     $variables['theme_hook_suggestions'][] = 'block__new_template';
-//    //     break;
-//     break;
-// }
-// }
+  // Change theme templates, add classes and/or replace IDs 
+  // Output block id's with devel
+  // dpm ($variables);
+  // dpm ($variables['block_html_id']);
+  // switch ($variables['block_html_id']) {
+  //    // case 'block-block-7':
+  //    // case 'block-8':
+  //    // case 'block-9':
+  //    //     $variables['classes_array'][] = 'new-class';
+  //    //     $variables['block_html_id'] = 'replace-id';
+  //    //     $variables['theme_hook_suggestions'][] = 'block__new_template';
+  //    //     break;
+  //     break;
+  // }
+}
 
 
 /**
