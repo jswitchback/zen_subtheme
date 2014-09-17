@@ -33,7 +33,7 @@ gem 'terminal-notifier-guard'
 # 'drush PROJECTNAME.local bundle' installs necessary gems on per project basis
 # 'drush PROJECTNAME.local compass start' compiles and watches project without success messages.
 # 'drush PROJECTNAME.local compass watch' compiles and watches project with success and error messages in terminal. 
-# 'drush PROJECTNAME.local compass watch --compass-options="sourcemap"' To add sourcemap to the Compass output
+# 'drush PROJECTNAME.local compass watch --compass-options="sourcemap"' To add sourcemap to the Compass output (requires #gem "sass", '~> 3.3' --- #gem 'compass', '~>1.0.0.alpha.19')
 # Also, you can run these without the RDG aliasing (PROJECTNAME.local) directly inside the drupal project folders 'drush compass...'
 
 # General Bundler commands
@@ -41,6 +41,5 @@ gem 'terminal-notifier-guard'
 # OR Run 'bundle install --path .bundle' to place the needed gems right inside your project. To achieve this run bundle install with the path option.
 # Run 'bundle check' to check dependencies without installing new gems.
 # Run `bundle exec compass watch` instead of simply `compass watch` to compile and live reload with project specific gems.
-# Run 'bundle exec compass compile --sourcemap' to compile project gems with sourcemaps
+# Run 'bundle exec compass compile --sourcemap' to compile project gems with sourcemaps (requires #gem "sass", '~> 3.3' --- #gem 'compass', '~>1.0.0.alpha.19')
 # Run 'bundle exec compass watch --sourcemap' to continuously compile project gems with sourcemaps
-
