@@ -5,8 +5,12 @@ source "https://rubygems.org"
 
 # Sass, Compass and extensions.
 # '~>' Refers to all versions of the given gem on the current full version number. For a specific version of a gem, remove the '~>' or use greater than '>','>='
-gem "sass", '~> 3.3'                 # Sass version with source-maps https://github.com/Compass/compass/issues/1108
-gem 'compass', '~>1.0.0.alpha.19'    # Framework built on Sass.
+# Use these sass/compass versions if you don't want sourcemaps (less buggy compiling)
+gem "sass", '~> 3.2.19'              # Sass version with source-maps https://github.com/Compass/compass/issues/1108
+gem 'compass', '~>0.12.6'            # Framework built on Sass.
+# Use these sass/compass versions if you want sourcemaps 
+#gem "sass", '~> 3.3'                 # Sass version with source-maps https://github.com/Compass/compass/issues/1108
+#gem 'compass', '~>1.0.0.alpha.19'    # Framework built on Sass.
 gem 'compass-rgbapng'                # Turns rgba() into .png's for backwards compatibility.
 gem 'singularitygs'                  # Alternative to the Susy grid framework.
 gem 'breakpoint'                     # Manages CSS media queries.

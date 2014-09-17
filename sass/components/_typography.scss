@@ -47,33 +47,39 @@ html {
    ========================================================================== */
 
 
+
 /*  Header Styles
    ========================================================================== */
 
+
 h1 {
   @include rem('font-size', $h1-font-size);
-  /* Sets 1 unit of vertical rhythm on the top and bottom margins. */
-  @include leader(1, $h1-font-size);
-  @include trailer(1, $h1-font-size);
+  line-height: $h1-line-height;
+  @include rem('margin-bottom', $h1-margin-bottom);
+  @include rem('margin-top', $h1-margin-top);
 }
 
 h2 {
   @include rem('font-size', $h2-font-size);
-  @include leader(1, $h2-font-size);
-  @include trailer(1, $h2-font-size);
+  line-height: $h2-line-height;
+  @include rem('margin-bottom', $h2-margin-bottom);
+  @include rem('margin-top', $h2-margin-top);
 }
 
 h3 {
   @include rem('font-size', $h3-font-size);
-  @include leader(1, $h3-font-size);
-  @include trailer(1, $h3-font-size);
+  line-height: $h3-line-height;
+  @include rem('margin-bottom', $h3-margin-bottom);
+  @include rem('margin-top', $h3-margin-top);
 }
 
 h4, h5, h6 {
   @include rem('font-size', $h4-font-size);
-  @include leader(1, $h4-font-size);
-  @include trailer(1, $h4-font-size);
+  line-height: $h4-line-height;
+  @include rem('margin-bottom', $h4-margin-bottom);
+  @include rem('margin-top', $h4-margin-top);
 }
+
 
 h1, h2, h3, h4, h5, h6 {
   color: $page-title-color;
@@ -83,9 +89,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-/**
- * Titles.
- */
+
+/*  Drupal Titles
+   ========================================================================== */
+
+
 .page__title,          /* The title of the page. */
 .node__title,          /* Title of a piece of content when it is given in a list of content. */
 .block__title,         /* Block title. */
@@ -114,6 +122,10 @@ h1, h2, h3, h4, h5, h6 {
 h3.field-label {
   margin-bottom: .25em;
 }
+
+
+/*  Misc
+   ========================================================================== */
 
 
 /* Thematic break */
