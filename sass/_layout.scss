@@ -11,9 +11,9 @@
 // Variable source: breakpoint 
 $breakpoint-to-ems: true; 
 
-// Set min and max width of layout
-$min-layout: 320px;
-$max-layout: 980px;
+// Set min and max width of the overall layout
+$layout-min: 320px;
+$layout-max: 980px;
 
 // Standard dpi breakpoints
 $phone-max: max-width 479px;
