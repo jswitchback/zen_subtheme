@@ -133,21 +133,13 @@ $disabled-font-color: #888888;
 
 
 
-// LINKS, BUTTONS, SUBMITS & PAGERS
+// LINKS
 $link-color: $primary-color;
 $link-color-visited: darken($link-color, 10%);
 $link-color-hover: darken($link-color, 5%);
 $link-color-focus: darken($link-color, 10%);
 $link-color-active: darken($link-color, 10%); 
 $link-text-decoration: none;
-
-$pager-color: $link-color;
-$pager-color-hover: $link-color-hover;
-
-$button-color: $link-color;
-$button-border: #DDDDDD;
-$button-border-radius: $base-line-height;
-
 
 
 // =============================================================================
@@ -180,11 +172,11 @@ $form-item-label-margin: 0 0 0 0;
 $form-item-description-font-size: 13px;
 
 
-// INPUT ELEMENTS
+// FORM INPUTS, BUTTONS, SUBMITS & PAGERS
 $input-padding: .25em .5em;
 $input-font-family: inherit;
 $input-font-color: $body-font-color;
-$input-font-size: 15px;
+$input-font-size: 14px;
 
 $input-background-color: #fff;
 $input-backgroud-color-focus: #fff;
@@ -209,6 +201,13 @@ $inline-field-gutter: .5em;
 
 $placeholder-color: #999999;
 $placeholder-focus-color: $input-background-color;
+
+$pager-color: $link-color;
+$pager-color-hover: $link-color-hover;
+
+$button-color: $link-color;
+$button-border: #DDDDDD;
+$button-border-radius: $ui-border-radius;
 
 
 // TABLES

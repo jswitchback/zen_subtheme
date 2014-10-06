@@ -154,10 +154,7 @@ function zen_subtheme_library() {
         'group' => JS_THEME),
     ),
     'css' => array(
-      drupal_get_path('theme', 'zen_subtheme') . '/css/lib-conditional/to-top-button.css' => array(
-        'type' => 'file',
-        'media' => 'screen',
-      ),
+      drupal_get_path('theme', 'zen_subtheme') . '/css/lib-conditional/to-top-button.css' => array(),
     ),
   );
 
@@ -180,6 +177,9 @@ function zen_subtheme_library() {
         'type' => 'file',
         'weight' => 1005,
         'group' => JS_LIBRARY),
+    ),
+    'css' => array(
+      drupal_get_path('theme', 'zen_vbosch') . '/css/lib-conditional/touch.css' => array(),
     ),
   );
       
@@ -329,18 +329,25 @@ function zen_subtheme_preprocess_page(&$variables) {
  *   The name of the template being rendered ("block" in this case.)
  */
 function zen_subtheme_preprocess_block(&$variables, $hook) {
-  // Add block class so we don't have to style by id
+  // Add block class so we don't have to style by an id.
   // dpm($variables['block']->module);
-  // ... to add blocks from other modules
+  // to add blocks from other modules
   switch ($variables['block']->module) {
     case 'system':
     case 'menu':
     case 'menu_block':
-    case 'block':
     case 'views':
+    case 'catalog_display':
+    case 'uc_ajax_cart':
       // Add a class equal to the id minus "block-"
       $block_id = $variables['block_html_id'];
       $block_id = str_replace('block-', '', $block_id);
+      $variables['classes_array'][] = $block_id;
+      break;
+    case 'block':
+      $block_id = $variables['block_html_id'];
+      // Must use slower preg_replace to get first match removed to prevent block-block-4 becoming a "4" class.
+      $block_id = preg_replace('/block-/', '', $block_id, 1);
       $variables['classes_array'][] = $block_id;
       break;
   }
